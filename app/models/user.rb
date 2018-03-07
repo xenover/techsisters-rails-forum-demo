@@ -1,10 +1,9 @@
 class User < ApplicationRecord
-  validates :username, presence: true
-  validates :password, presence: true, length: { minimum: 5 }
 
   has_many :posts
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-  def authenticate(login_password)
-    password == login_password
-  end
 end

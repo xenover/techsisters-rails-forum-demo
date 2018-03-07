@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
+  # Devise routes
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+  # App routes
+  resources :users
   resources :posts do
     resources :comments
   end
 
-  resources :users
-
   root 'welcome#index'
-
-  get :signup, to: 'users#new'
-  get :login, to: 'sessions#new'
-  post :login, to: 'sessions#authenticate'
-  delete :logout, to: 'sessions#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
