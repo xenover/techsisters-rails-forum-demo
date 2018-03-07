@@ -24,12 +24,15 @@ apt-get -y update >/dev/null 2>&1
 
 install 'development tools' build-essential
 
-install Ruby ruby2.5 ruby2.5-dev
+install Ruby ruby2.5 ruby2.5-dev ruby-railties
 update-alternatives --set ruby /usr/bin/ruby2.5 >/dev/null 2>&1
 update-alternatives --set gem /usr/bin/gem2.5 >/dev/null 2>&1
 
 echo installing Bundler
 gem install bundler -N >/dev/null 2>&1
+
+echo installing Rails 5
+gem install rails --version 5.1
 
 install 'Nokogiri dependencies' zlib1g-dev libffi-dev libxml2 libxml2-dev libxslt1-dev
 install 'ExecJS runtime' nodejs
