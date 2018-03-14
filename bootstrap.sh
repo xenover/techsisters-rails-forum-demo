@@ -34,7 +34,7 @@ gem install bundler -N >/dev/null 2>&1
 echo installing Rails 5
 gem install rails --version 5.1
 
-install 'Nokogiri dependencies' zlib1g-dev libffi-dev libxml2 libxml2-dev libxslt1-dev
+install 'Nokogiri dependencies' zlib zlib1g-dev libffi-dev libxml2 libxml2-dev libxslt1-dev
 install 'ExecJS runtime' nodejs
 install Git git
 install SQLite sqlite3 libsqlite3-dev
