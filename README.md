@@ -2,18 +2,30 @@
 
 # Setup
 
-brew cask install virtualbox
+## OS X
 
-brew cask install vagrant
+http://sourabhbajaj.com/mac-setup/Vagrant/README.html
+
+## Windows
+
+https://www.sitepoint.com/getting-started-vagrant-windows/
+
+## Linux
+
+https://www.godaddy.com/garage/install-vagrant-ubuntu-14-04/
+
+# Coding
 
 vagrant up
 vagrant ssh
 
-# Coding
-
-Techsisters Forum App
+cd /vagrant/
 
 rails new techsisters_forum
+
+add devise to Gemfile
+
+add twitter-bootstrap-rails to Gemfile
 
 bundle
 
@@ -28,8 +40,6 @@ rails db:migrate
 routes.rb -> root 'welcome#index'
 
 rails g controller Welcome index
-
-add devise to Gemfile
 
 bundle
 
@@ -60,3 +70,7 @@ Add new comment link to posts
 move comments under posts in routes
 
 move new comment inside post show view
+
+...
+
+vagrant halt
