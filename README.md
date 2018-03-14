@@ -16,6 +16,7 @@ https://www.godaddy.com/garage/install-vagrant-ubuntu-14-04/
 
 # Coding
 
+vagrant plugin install vagrant-vbguest
 vagrant up
 vagrant ssh
 
