@@ -45,11 +45,13 @@ bundle
 
 rails g devise:install
 
-rails g devise:controllers
+rails g devise:controllers user
 
 rails g devise:views
 
 rails g devise user
+
+rails db:migrate
 
 add username field to registrations/new
 
