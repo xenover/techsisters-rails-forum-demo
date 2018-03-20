@@ -16,11 +16,6 @@ https://www.godaddy.com/garage/install-vagrant-ubuntu-14-04/
 
 # Coding
 
-vagrant up
-vagrant ssh
-
-cd /vagrant/
-
 rails new techsisters_forum
 
 add devise to Gemfile
@@ -33,29 +28,35 @@ rails s
 
 http://localhost:3000
 
-rails generate scaffold User username:string
-
-rails db:migrate
-
-routes.rb -> root 'welcome#index'
-
-rails g controller Welcome index
-
-bundle
-
 rails g devise:install
 
-rails g devise:controllers user
+routes.rb -> root 'home#index'
 
-rails g devise:views
+rails g controller Home index
 
 rails g devise user
 
 rails db:migrate
 
-add username field to registrations/new
+rails g devise:controllers users
 
-add login/logout links to views/layouts/application.html.erb based on user_logged_in?
+add bootstrap to assets/javascripts/application.js and assets/stylesheets/application.scss
+
+add navigation bar to layouts/application.html.erb
+
+add signup and singin to navigation bar
+
+add container around yield
+
+add notice and alert elements
+
+rails g devise:views users
+
+restart server if running
+
+beutify signup view
+
+add username and logout to layouts/application.html.erb based on user_signed_in?
 
 rails g scaffold Post user:belongs_to title:string content:string
 
@@ -72,7 +73,3 @@ Add new comment link to posts
 move comments under posts in routes
 
 move new comment inside post show view
-
-...
-
-vagrant halt
