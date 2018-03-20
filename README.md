@@ -64,6 +64,12 @@ rails db:migrate
 
 add all posts link to to views/layouts/application.html.erb is user_logged_in?
 
+remove user_id field from new posts field
+
+add user_id: current_user.id when creating new posts
+
+add presence validations to posts title and content
+
 rails g scaffold Comment post:belongs_to user:belongs_to content:string
 
 rails db:migrate
